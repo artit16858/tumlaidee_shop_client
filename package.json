@@ -1,0 +1,29 @@
+{
+  "name": "erp_client",
+  "version": "1.0.0",
+  "description": "ERP client of Tum Lai Dee",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8ed4e6c54e9a90534dcacd7a40fcd048/erp_client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8ed4e6c54e9a90534dcacd7a40fcd048/erp_client/issues"
+  },
+  "homepage": "https://github.com/8ed4e6c54e9a90534dcacd7a40fcd048/erp_client#readme",
+  "dependencies": {
+    "antd": "^4.6.3",
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
+  }
+}
