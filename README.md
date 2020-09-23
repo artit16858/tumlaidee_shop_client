@@ -1,2 +1,2 @@
 # erp_client
-ERP client of Tum Lai Dee 
+Shop client of Tum Lai Dee 
