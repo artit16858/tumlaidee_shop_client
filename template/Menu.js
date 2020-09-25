@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Link from 'next/link'
+
 export default function Menu() {
     return (
         <nav className="col-md-2 d-none d-md-block bg-white sidebar">
@@ -109,11 +111,20 @@ export default function Menu() {
                         รายการลูกค้า
                         </a>
                     </li>
+
                     <li className="nav-item">
                         <a className="nav-link" href="#">
                             <span data-feather="file-text" />
                         เพิ่มลูกค้า
                         </a>
+                    </li>
+                    <li className="nav-item">
+                        <Link href="./chat">
+                            <a className="nav-link" >
+                                <span data-feather="file-text" />
+                        แชทลูกค้า
+                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <h5 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

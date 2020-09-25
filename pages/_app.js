@@ -5,7 +5,7 @@ import Footer from '../template/Footer'
 import Nav from '../template/Nav'
 import Menu from '../template/Menu'
 
-import '../assets/styles.css'
+import '../assets/scss/styles.scss'
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
                     <Menu />
                     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                         <Component {...pageProps} />
-                        
+
                     </main>
 
                 </div>
