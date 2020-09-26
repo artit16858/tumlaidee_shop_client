@@ -119,7 +119,7 @@ export default function Menu() {
                         </a>
                     </li>
                     <li className="nav-item">
-                        <Link href="./chat">
+                        <Link href="./list">
                             <a className="nav-link" >
                                 <span data-feather="file-text" />
                         แชทลูกค้า

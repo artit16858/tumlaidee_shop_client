@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
-import Link from "next/link";
-import PropTypes from 'prop-types';
-import Router, { withRouter } from 'next/router'
 import Head from 'next/head';
-import { CaretLeftOutlined, SendOutlined } from '@ant-design/icons';
+import { Typography } from 'antd';
+
+import { HomeOutlined, UserOutlined } from '@ant-design/icons';
 
 import ListChat from '../components/chat/list.js'
 
 
-const Chat = (props) => {
-    const { router } = props;
-    console.log("router.query", router.query);
-    console.log("router.query", router.query.user);
+const { Title } = Typography;
+
+const List = () => {
     let data = [
         {
             id: 'max',
@@ -22,35 +20,26 @@ const Chat = (props) => {
                     endedAt: 1570454329003,
                     messages: [
                         {
-                            user: 'add',
+                            user: '장만월 사장님',
                             message: '9999',
                             isRead: true
                         },
                         {
-                            user: 'add',
+                            user: '최준원 회장님',
                             message: '식사중입니다.',
                             isRead: true
                         },
                         {
-                            user: 'add',
+                            user: '장만월 사장님',
                             message: '언제쯤 오세요?',
                             isRead: false
                         },
                         {
-                            user: 'max',
-                            message: '얼른 오세요~99999',
-                            isRead: false
-                        },
-                        {
-                            user: 'add',
-                            message: '얼른 오세요~',
-                            isRead: false
-                        },
-                        {
-                            user: 'max',
+                            user: '장만월 사장님',
                             message: '얼른 오세요~8915',
                             isRead: false
                         }
+
                     ]
                 },
                 {
@@ -359,15 +348,10 @@ const Chat = (props) => {
         }
     ];
     const new_data = data.find(val => val.id === "max")
-    const messages = new_data.contents.find(val => val.name === router.query.user)
-    console.log("messages", messages);
-
     const [state, setState] = useState({
-        user: router.query.user,
-        messages: messages ? messages.messages : []
+        user: "max",
+        data: new_data.contents
     });
-    console.log("state.query", state);
-
     return (
         <div>
             <Head>
@@ -376,37 +360,21 @@ const Chat = (props) => {
                 <meta name="description" content="React Socket.io Chatting application" />
                 <meta name="keywords" content="react,socket.io,chatting,javascript" />
             </Head>
-
-            <div className="navbar navbar-white sticky-top bg-head-chat flex-md-nowrap p-0" >
-                <div className="navbar-brand col-sm-3 col-md-2 mr-0" >
-                    <Link href={`/list`}>
-                        <CaretLeftOutlined style={{ fontSize: 22, color: '#fff' }} />
-                    </Link>
-                </div>
-                <label level={3} style={{ fontSize: 22, color: '#fff' }} > {state.user}</label>
-                <div className="navbar-brand col-sm-3 col-md-2 mr-0" >
-                </div>
+            <div className="navbar  sticky-top bg-head-chat flex-md-nowrap p-0" >
+                <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+                    <HomeOutlined style={{ fontSize: 22, color: '#fff' }} />
+                </a>
+                <label level={3} style={{ fontSize: 22, color: '#fff' }} >LIVE CHAT</label>
+                <ul className="navbar-nav px-3">
+                    <li className="nav-item text-nowrap">
+                        <a className="nav-link" href="#">
+                            <UserOutlined style={{ fontSize: 22, color: '#fff' }} />
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div className="container-chat">
-                {state.messages.map((item, idx) => (
-                    <div className={`` + (item.user === 'max' ? 'text-right' : 'text-left')} key={idx} >
-                        <label className="text-message">{item.message}</label>
-                    </div>
-                )
-                )}
-                {/* <main>{state.data && <ListChat user={state.user} data={state.data} />}</main> */}
-            </div>
-            <div className="d-flex  justify-content-center" >
-                <input className="input-chat" type="text" />
-                <SendOutlined className="send-message" />
-            </div>
-
+            <main>{state.data && <ListChat user={state.user} data={state.data} />}</main>
         </div>
     )
 }
-
-export default withRouter(Chat)
-
-Chat.propTypes = {
-    router: PropTypes.object,
-};
+export default List

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/8ed4e6c54e9a90534dcacd7a40fcd048/erp_client#readme",
   "dependencies": {
     "antd": "^4.6.3",
+    "dayjs": "^1.8.36",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.5.3",
     "node-sass": "^4.14.1",
