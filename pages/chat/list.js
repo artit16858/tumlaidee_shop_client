@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Head from 'next/head';
 import { HomeOutlined, UserOutlined } from '@ant-design/icons';
-import ListChat from '../components/chat/list.js'
-import * as dataSource from '../data/chat/data.json';
-
+import ListChat from '../../components/chat/list.js'
+import * as dataSource from '../../dataSource/chat/data.json';
+import { SocketContext } from '../../socket-context';
 const List = () => {
+    const socket = useContext(SocketContext);
     const data = dataSource.data
 
     const new_data = data.find(val => val.id === "max")

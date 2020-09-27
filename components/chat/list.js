@@ -10,7 +10,7 @@ const ListChat = (props) => {
     return (
         <div>
             {data.map((item, index) => (
-                <Link href={`/chat?user=${item.name}`}  key={index}>
+                <Link href={`/chat/chat?user=${item.name}`}  key={index}>
                     <div className="card" >
                         <Card
                             hoverable
