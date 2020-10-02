@@ -8,6 +8,7 @@ const ChatView = (props) => {
                     <label className="text-message">{item.message}</label>
                 </div>
             ))}
+           
         </div>
     );
 }
